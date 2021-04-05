@@ -1,0 +1,35 @@
+body {
+    font-family: 'Stylish' Arial, sans-serif;
+    font-size: 200%;
+	line-height: 1.6;
+    background: url(jefferson-santos-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+    opacity: 20.5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+h2, p {
+    text-align: center;
+    font-weight: bold;
+    position: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #f3e40c;
+}
+
+p {
+    color: rgb(253, 253, 253);
+}
+
+.centered {
+    position: fixed;
+    top: 30%;
+    width: 100%;
+}
+
+
