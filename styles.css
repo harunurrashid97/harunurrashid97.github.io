@@ -124,7 +124,7 @@ video {
   height: auto;
   max-width: 100%;
   display: block;
-  position: relative;
+  position: middle;
 }
 
 video {
