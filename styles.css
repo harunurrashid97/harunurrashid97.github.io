@@ -834,7 +834,7 @@ article {
   flex: 1 0 auto
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1099px) {
   .featured-image {
     min-height: 400px;
     height: auto;
