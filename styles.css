@@ -794,8 +794,8 @@ article {
 .split-header-image {
   position:static; /* Required for caption positioning */
   clear: both;
-  max-width: 880px;
-  max-height: 500px;
+  max-width: 980px;
+  max-height: 400px;
 }
 
 .article-header {
