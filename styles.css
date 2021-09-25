@@ -809,7 +809,7 @@ article {
 
 .featured-image {
   width: 100%;
-  background-position: right;
+  background-position: left;
   background-origin: border-box;
   background-size: cover;
   height: 400px;
