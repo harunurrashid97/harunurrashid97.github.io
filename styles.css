@@ -826,7 +826,7 @@ article {
   background-position: left;
   background-origin: border-box;
   background-size: cover;
-  height: 60vh;
+  height: 400px;
   min-height: 500px;
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
