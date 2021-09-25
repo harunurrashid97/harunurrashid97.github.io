@@ -794,7 +794,7 @@ article {
 .split-header-image {
   position: relative; /* Required for caption positioning */
   clear: both;
-  max-width: 580px;
+  max-width: 380px;
 }
 
 .article-header {
