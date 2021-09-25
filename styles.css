@@ -851,7 +851,7 @@ article {
 }
 @media (min-width: 64em) {
   .article-header-caption {
-    padding: 40px 40px 60px 0;
+    padding: 9px 10px 9px 0;
   }
 }
 
