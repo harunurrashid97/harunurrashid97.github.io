@@ -810,7 +810,7 @@ article {
 .featured-image {
   width: 100%;
   background-position: left;
-  background-origin: border-box;
+  background-origin:content-box;
   background-size: cover;
   height: 400px;
   min-height: 500px;
