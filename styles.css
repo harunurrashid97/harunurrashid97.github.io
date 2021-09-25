@@ -795,6 +795,7 @@ article {
   position:static; /* Required for caption positioning */
   clear: both;
   max-width: 880px;
+  max-height: 500px;
 }
 
 .article-header {
