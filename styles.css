@@ -834,14 +834,14 @@ article {
   flex: 1 0 auto
 }
 
-@media screen and (max-width: 1099px) {
+@media screen and (max-width: 1199px) {
   .featured-image {
     min-height: 400px;
     height: auto;
   }
 }
 
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 867px) {
   .featured-image {
     min-height: 300px;
   }
