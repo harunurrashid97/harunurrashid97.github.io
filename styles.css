@@ -792,9 +792,9 @@ article {
 }
 
 .split-header-image {
-  position: relative; /* Required for caption positioning */
+  position:static; /* Required for caption positioning */
   clear: both;
-  max-width: 380px;
+  max-width: 580px;
 }
 
 .article-header {
