@@ -89,6 +89,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -98,6 +99,8 @@
             font-size: 0.95rem;
             transition: var(--transition);
             position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .nav-links a::after {
@@ -132,6 +135,9 @@
             cursor: pointer;
             padding: 0.5rem;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .dark-mode-toggle:hover {
@@ -872,19 +878,20 @@
             <div class="hero-gradient gradient-2" aria-hidden="true"></div>
             <div class="hero-content">
                 <h1 class="hero-title fade-in">
-                    Hi, I'm <span class="gradient-text">Harun-Ur-Rashid</span><br>
-                    Software Engineer
+                    Hi, I'm <span class="gradient-text">Harun-Ur-Rashid</span>
+                    <span style="font-size: 0.6em; font-weight: 600; display: block; margin-top: 0.5rem; color: var(--text-secondary);">Entrepreneurial Engineer | Software Engineer | AI/ML Mentor</span>
                 </h1>
+
                 <p class="hero-subtitle fade-in" style="animation-delay: 0.2s;">
-                    I'm a Software Engineer at Giga Tech Limited. I've profound knowledge in Machine Learning, Deep Learning, Natural Language Processing, and AI Software Development. I believe no problem is beyond human inventiveness.
+                    <span style="font-style: italic; color: var(--accent-blue); font-weight: 500; display: block; margin-bottom: 1rem;">"I believe no problem is beyond human inventiveness."</span>
                 </p>
+
                 <div class="hero-buttons fade-in" style="animation-delay: 0.4s;">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="/files/cv.pdf" class="btn btn-secondary">Download CV</a>
+                    <a href="/files/cv.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
                 </div>
             </div>
         </section>
-
         <!-- About Section -->
         <section id="about" aria-labelledby="about-title">
             <h2 id="about-title" class="section-title">About <span class="accent">Me</span></h2>
@@ -895,10 +902,16 @@
                 <div class="about-text">
                     <h3>Biography</h3>
                     <p>
-                        I'm Harun-Ur-Rashid. Currently, I'm working as a Software Engineer at <a href="http://gigatechltd.com/" target="_blank" style="color: var(--accent-blue);">Giga Tech Limited</a>. I've profound knowledge in Machine Learning, Deep Learning, Natural Language Processing, and AI Software Development.
+                        <span style="color: var(--accent-blue); font-weight: 600; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.5rem;">Current Role & Expertise</span>
+                        I'm Harun-Ur-Rashid. Currently, I'm working as a Software Engineer at <a href="https://www.upaybd.com/" target="_blank" style="color: var(--accent-blue);">উপায় (upay)</a>. I've profound knowledge in Machine Learning, Deep Learning, Natural Language Processing, Fintech and Software Development.
                     </p>
                     <p>
-                        I graduated from CSE at <a href="https://daffodilvarsity.edu.bd/" target="_blank" style="color: var(--accent-blue);">Daffodil International University</a>. I'm interested in doing research on text and image related problems. I believe no problem is beyond human inventiveness.
+                        <span style="color: var(--accent-blue); font-weight: 600; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.5rem;">Education & Research Interests</span>
+                        I hold a B.Sc. in Computer Science and Engineering from <a href="https://daffodilvarsity.edu.bd/" target="_blank" style="color: var(--accent-blue);">Daffodil International University</a>. I'm interested in doing research on <b>Deep Learning & Computer Vision</b> related problems.
+                    </p>
+                    <p>
+                        <span style="color: var(--accent-blue); font-weight: 600; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.5rem;">Mission & Vision</span>
+                        Dedicated to advancing Deep Learning, Computer Vision and building robust software systems. I bring a worldwide perspective to solving localized challenges through international research collaboration. As a former Co-Founder, I am committed to engineering excellence—advancing the AI landscape in Bangladesh and empowering the next generation of AI/ML enthusiasts through mentorship and the transformation of research into real-world solutions.
                     </p>
 
                     <div class="skills-container">
@@ -948,13 +961,31 @@
                         <header class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Software Engineer (Python)</h3>
-                                <p class="timeline-company"><a href="https://www.upaybd.com/" target="_blank" style="color: var(--accent-blue);">উপায় (upay)</a></p>
+                                <p class="timeline-company"><a href="https://www.upaybd.com/" target="_blank" style="color: var(--accent-blue);">উপায় (upay)</a> - UCB Fintech Company Limited</p>
                             </div>
                             <time class="timeline-duration" datetime="2025-12">Dec 2025 - Present</time>
                         </header>
                         <ul class="timeline-description">
-                            <li>Developing AI <strong>(Computer Vision)</strong> based web application using Python, Flask, Django</li>
-                            <li>Developing <strong>(Computer Vision)</strong> based API using Python, Django</li>
+                            <li>Built and maintained MFS systems using Django REST Framework, improving request handling efficiency</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <header class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Software Engineer (Machine Learning)</h3>
+                                <p class="timeline-company"><a href="https://syntechbd.com/" target="_blank" style="color: var(--accent-blue);">Syntech Solution Ltd.</a></p>
+                            </div>
+                            <time class="timeline-duration" datetime="2024-01">2024 - 2025</time>
+                        </header>
+                        <ul class="timeline-description">
+                            <li>Built a microservice-based company name clearance search system using DRF, Whisper, PyTorch, Elasticsearch, and Word2Vec</li>
+                            <li>Improved search accuracy by combining NLP and speech models</li>
+                            <li>Containerized services using Docker and deployed to an Ubuntu server</li>
+                            <li>Built a data analysis report system using Flask, pandas, and matplotlib</li>
                         </ul>
                     </div>
                 </article>
@@ -970,8 +1001,12 @@
                             <time class="timeline-duration" datetime="2021-06">Jun 2021 - Nov 2025</time>
                         </header>
                         <ul class="timeline-description">
-                            <li>Developing AI <strong>(Computer Vision)</strong> based web application using Python, Flask, Django</li>
-                            <li>Developing <strong>(Computer Vision)</strong> based API using Python, Django</li>
+                            <li>Built and maintained face verification and recognition systems using CNN, Flask, and REST APIs for eKYC platforms</li>
+                            <li>Improved OCR and Transliteration microservices performance by 30%</li>
+                            <li>Re-engineered the NID verification workflow into a stateless architecture</li>
+                            <li>Led the migration to a distributed RPA architecture, reducing verification time by 40%</li>
+                            <li>Integrated with EC, CBS, AD, and Porichoy</li>
+                            <li>Contributed to eKYC deployments for BRAC, MTBL, Basic Bank, IFIC, TAP, bKash, FSIBL</li>
                         </ul>
                     </div>
                 </article>
@@ -987,8 +1022,8 @@
                             <time class="timeline-duration" datetime="2020-08">Aug 2020 - Nov 2020</time>
                         </header>
                         <ul class="timeline-description">
-                            <li>Worked on Machine Learning and NLP</li>
-                            <li>Worked on industrial customers data and Facebook's data using NLP</li>
+                            <li>Acquired foundational knowledge and practical skills in Machine Learning and NLP through a structured training program</li>
+                            <li>Developed proficiency in analyzing complex datasets from industrial and social media sources using advanced natural language processing techniques</li>
                         </ul>
                     </div>
                 </article>
