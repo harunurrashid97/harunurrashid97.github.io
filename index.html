@@ -843,6 +843,281 @@
         .skip-link:focus {
             top: 0;
         }
+
+        /* ===== Contact Section (redesign) ===== */
+        #contact {
+            --c-accent: var(--accent-blue);
+            --c-line: rgba(148, 163, 184, 0.18);
+            --c-field: rgba(255, 255, 255, 0.03);
+            --c-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
+            max-width: 1200px;
+        }
+
+        .contact-eyebrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--c-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-eyebrow .eyebrow-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-eyebrow .eyebrow-line {
+            width: 36px;
+            height: 2px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-heading {
+            font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin: 0 0 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-heading em {
+            font-style: italic;
+            font-weight: 600;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-lead {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0 0 2.5rem;
+            max-width: 440px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--c-line);
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--c-accent);
+            background: var(--c-field);
+            transform: translateY(-2px);
+        }
+
+        .contact-link .link-icon {
+            color: var(--c-accent);
+            font-size: 0.95rem;
+            width: 1.1rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Form card */
+        .contact-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--c-line);
+            border-radius: 24px;
+            padding: 2.5rem;
+            background:
+                radial-gradient(120% 120% at 100% 0%, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0) 45%),
+                var(--bg-secondary);
+        }
+
+        .contact-card .card-arc {
+            position: absolute;
+            top: -90px;
+            right: -90px;
+            width: 260px;
+            height: 260px;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .field {
+            margin-bottom: 1.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .field:last-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        .field label {
+            display: block;
+            font-family: var(--c-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.65rem;
+        }
+
+        .field input,
+        .field textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--c-line);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .field textarea {
+            min-height: 130px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .field input:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--c-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+        }
+
+        .contact-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-status {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 1.25rem;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border: 1px solid transparent;
+        }
+
+        .form-status.is-success {
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.35);
+        }
+
+        .form-status.is-error {
+            color: #fca5a5;
+            background: rgba(239, 68, 68, 0.08);
+            border-color: rgba(239, 68, 68, 0.35);
+        }
+
+        .contact-privacy {
+            font-family: var(--c-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+        }
+
+        .btn-send {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--accent-gradient);
+            color: #fff;
+            border: none;
+            border-radius: 999px;
+            padding: 0.85rem 1.7rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-send:disabled {
+            opacity: 0.7;
+            cursor: default;
+            transform: none;
+            box-shadow: none;
+        }
+
+        @media (max-width: 960px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .field-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .field-row .field {
+                margin-bottom: 1.75rem;
+            }
+            .contact-card {
+                padding: 1.75rem;
+            }
+            .contact-card-footer {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -859,7 +1134,6 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="publication/">Publications</a></li>
                 <li><a href="talk/">Talks</a></li>
                 <li><a href="/files/cv.pdf">CV</a></li>
@@ -886,7 +1160,7 @@
                 </p>
 
                 <div class="hero-buttons fade-in" style="animation-delay: 0.4s;">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="publication/" class="btn btn-primary">View Publications</a>
                     <a href="/files/cv.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
                 </div>
             </div>
@@ -1029,113 +1303,67 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" aria-labelledby="projects-title">
-            <h2 id="projects-title" class="section-title">Featured <span class="accent">Projects</span></h2>
-            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                <button class="btn btn-primary" onclick="filterProjects('all')" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">All</button>
-                <button class="btn btn-secondary" onclick="filterProjects('ml')" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Machine Learning</button>
-                <button class="btn btn-secondary" onclick="filterProjects('dl')" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Deep Learning</button>
-                <button class="btn btn-secondary" onclick="filterProjects('nlp')" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">NLP</button>
-            </div>
-            <div class="projects-grid">
-                <article class="project-card" data-category="ml">
-                    <div class="project-image" style="background-image: url('/project/TMDB-Box-Office-Revenue-Prediction/movie.png'); background-size: cover; background-position: center;" role="img" aria-label="Movie Revenue Prediction Project"></div>
-                    <div class="project-content">
-                        <h3 class="project-title"><a href="#" style="color: var(--text-primary); text-decoration: none;">Movie Revenue Prediction by XGB/LGBM</a></h3>
-                        <p class="project-description">
-                            Predicting 7,000 movie revenues by machine learning model
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">XGBoost</span>
-                            <span class="project-tag">LightGBM</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" data-category="ml">
-                    <div class="project-image" style="background-image: url('/project/Santander-Customer-Transaction-Prediction/customer.png'); background-size: cover; background-position: center;" role="img" aria-label="Customer Transaction Prediction Project"></div>
-                    <div class="project-content">
-                        <h3 class="project-title"><a href="#" style="color: var(--text-primary); text-decoration: none;">Customer Transaction Prediction</a></h3>
-                        <p class="project-description">
-                            Identifying which customers will make a specific transaction in the future
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Scikit-learn</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" data-category="ml">
-                    <div class="project-image" style="background-image: url('/project/Catching Credit Card Thieves with R/fraud.jpg'); background-size: cover; background-position: center;" role="img" aria-label="Fraud Detection Project"></div>
-                    <div class="project-content">
-                        <h3 class="project-title"><a href="#" style="color: var(--text-primary); text-decoration: none;">Fraud Detection Model</a></h3>
-                        <p class="project-description">
-                            Building a predictive model for credit card frauds in R
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">R</span>
-                            <span class="project-tag">Fraud Detection</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" data-category="dl">
-                    <div class="project-image" style="background-image: url('/project/Youtube-Title-Generator/youtube.png'); background-size: cover; background-position: center;" role="img" aria-label="YouTube Title Generator Project"></div>
-                    <div class="project-content">
-                        <h3 class="project-title"><a href="#" style="color: var(--text-primary); text-decoration: none;">Generating YouTube Title by LSTM</a></h3>
-                        <p class="project-description">
-                            Analyzing popular youtube titles and generating youtube video titles by LSTM
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Deep Learning</span>
-                            <span class="project-tag">LSTM</span>
-                            <span class="project-tag">NLP</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" data-category="dl">
-                    <div class="project-image" style="background-image: url('/project/web-scarping-ds-job/data scientist.PNG'); background-size: cover; background-position: center;" role="img" aria-label="Web Scraping Project"></div>
-                    <div class="project-content">
-                        <h3 class="project-title"><a href="#" style="color: var(--text-primary); text-decoration: none;">Web Scraping DS Job Description</a></h3>
-                        <p class="project-description">
-                            Scraping DS job descriptions from Indeed and generating descriptions by LSTM
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Deep Learning</span>
-                            <span class="project-tag">LSTM</span>
-                            <span class="project-tag">Web Scraping</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title" class="section-title">Get In <span class="accent">Touch</span></h2>
-            <div class="contact-content">
-                <div style="text-align: center; margin-bottom: 3rem;">
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                        Feel free to reach out for collaborations, opportunities, or just to say hello!
+
+            <div class="contact-grid">
+                <!-- Left column -->
+                <div class="contact-intro">
+                    <h2 id="contact-title" class="contact-heading">Got a project<br>worth <em>building</em>?</h2>
+                    <p class="contact-lead">
+                        I'm always open to interesting work in AI/ML and software engineering &mdash;
+                        computer vision, and product engineering. Tell me what
+                        you're working on and I'll get back to you.
                     </p>
+
+                    <div class="contact-links">
+                        <a class="contact-link" href="mailto:engharunurrashid97@gmail.com">
+                            <span class="link-icon"><i class="fas fa-envelope"></i></span>
+                            engharunurrashid97@gmail.com
+                        </a>
+                        <a class="contact-link" href="https://www.linkedin.com/in/harunurrashid97" target="_blank" rel="noopener noreferrer">
+                            <span class="link-icon"><i class="fab fa-linkedin-in"></i></span>
+                            linkedin.com/in/harunurrashid97
+                        </a>
+                    </div>
                 </div>
 
-                <div class="social-links">
-                    <a href="mailto:engharunurrashid97@gmail.com" class="social-link" aria-label="Email Harun" style="font-size: 1.5rem;">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/harunurrashid97" class="social-link" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem;">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/harunurrashid97" class="social-link" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem;">
-                        <i class="fab fa-github"></i>
-                    </a>
+                <!-- Right column: form -->
+                <div class="contact-card">
+                    <span class="card-arc" aria-hidden="true"></span>
+                    <form id="contact-form" action="https://formspree.io/f/mpqgdene" method="POST" novalidate>
+                        <input type="hidden" name="_subject" value="New project inquiry from your portfolio">
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="cf-name">Your name</label>
+                                <input type="text" id="cf-name" name="name" placeholder="Harun" required>
+                            </div>
+                            <div class="field">
+                                <label for="cf-email">Email</label>
+                                <input type="email" id="cf-email" name="email" placeholder="harun@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="cf-budget">Budget (optional)</label>
+                            <input type="text" id="cf-budget" name="budget" placeholder="e.g. $10k &ndash; $25k">
+                        </div>
+
+                        <div class="field">
+                            <label for="cf-message">Tell me about the project</label>
+                            <textarea id="cf-message" name="message" placeholder="A few sentences about goals, timeline, and what success looks like." required></textarea>
+                        </div>
+
+                        <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
+
+                        <div class="contact-card-footer">
+                            <span class="contact-privacy">Protected by spam filtering &middot; Your details stay private. Usually replies within three working day.</span>
+                            <button type="submit" class="btn-send">
+                                <span class="btn-send-label">Send message</span>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -1249,37 +1477,6 @@
             });
         }
 
-        // Project filter function
-        function filterProjects(category) {
-            const projects = document.querySelectorAll('.project-card');
-            const buttons = document.querySelectorAll('#projects button');
-
-            // Update button styles
-            buttons.forEach(btn => {
-                btn.classList.remove('btn-primary');
-                btn.classList.add('btn-secondary');
-            });
-            event.target.classList.remove('btn-secondary');
-            event.target.classList.add('btn-primary');
-
-            // Filter projects
-            projects.forEach(project => {
-                if (category === 'all' || project.dataset.category === category) {
-                    project.style.display = 'block';
-                    setTimeout(() => {
-                        project.style.opacity = '1';
-                        project.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    project.style.opacity = '0';
-                    project.style.transform = 'translateY(30px)';
-                    setTimeout(() => {
-                        project.style.display = 'none';
-                    }, 300);
-                }
-            });
-        }
-
         // Dark/Light Mode Toggle
         const darkModeToggle = document.querySelector('.dark-mode-toggle');
         const icon = darkModeToggle.querySelector('i');
@@ -1305,6 +1502,56 @@
                 localStorage.setItem('theme', 'dark');
             }
         });
+
+        // Contact form handler — submits to Formspree via AJAX (no page redirect).
+        // The form also has action/method set, so it still works if JS is disabled.
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            const statusEl = document.getElementById('form-status');
+            const btn = contactForm.querySelector('.btn-send');
+            const label = btn.querySelector('.btn-send-label');
+            const defaultLabel = label.textContent;
+
+            const showStatus = (message, type) => {
+                statusEl.textContent = message;
+                statusEl.classList.remove('is-success', 'is-error');
+                statusEl.classList.add(type === 'success' ? 'is-success' : 'is-error');
+                statusEl.hidden = false;
+            };
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!contactForm.reportValidity()) return;
+
+                statusEl.hidden = true;
+                btn.disabled = true;
+                label.textContent = 'Sending…';
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: { Accept: 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        showStatus("Thanks — your message is on its way. I'll get back to you soon.", 'success');
+                        contactForm.reset();
+                    } else {
+                        const data = await response.json().catch(() => ({}));
+                        const msg = data.errors
+                            ? data.errors.map((err) => err.message).join(', ')
+                            : 'Something went wrong. Please try again or email me directly.';
+                        showStatus(msg, 'error');
+                    }
+                } catch (err) {
+                    showStatus('Network error. Please try again or email me directly.', 'error');
+                } finally {
+                    btn.disabled = false;
+                    label.textContent = defaultLabel;
+                }
+            });
+        }
     </script>
 </body>
 </html>
