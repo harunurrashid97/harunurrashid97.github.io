@@ -445,6 +445,36 @@
             box-shadow: var(--shadow-soft);
         }
 
+        /* Profile / social links in About */
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .profile-link {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            text-decoration: none;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: var(--transition);
+        }
+
+        .profile-link:hover {
+            color: #fff;
+            background: var(--accent-gradient);
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
+        }
+
         /* Experience Section */
         .timeline {
             position: relative;
@@ -1269,6 +1299,39 @@
                             <span class="skill-badge">Scikit-learn</span>
                             <span class="skill-badge">Flask</span>
                             <span class="skill-badge">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-container">
+                        <p class="skills-title">Connect</p>
+                        <div class="profile-links">
+                            <a class="profile-link" href="https://www.linkedin.com/in/harunurrashid97" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://github.com/harunurrashid97" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://www.kaggle.com/harunurrashid97" target="_blank" rel="noopener noreferrer" aria-label="Kaggle" title="Kaggle">
+                                <i class="fab fa-kaggle" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://medium.com/@harunurrashid97" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium">
+                                <i class="fab fa-medium" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://www.hackerrank.com/harunurrashid97" target="_blank" rel="noopener noreferrer" aria-label="HackerRank" title="HackerRank">
+                                <i class="fab fa-hackerrank" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://scholar.google.com/citations?user=JouEduMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://www.researchgate.net/profile/Harun-Ur-Rashid" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate" title="ResearchGate">
+                                <i class="fab fa-researchgate" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://orcid.org/0009-0003-7211-0911" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID">
+                                <i class="fab fa-orcid" aria-hidden="true"></i>
+                            </a>
+                            <a class="profile-link" href="https://x.com/harunurrashid97" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)">
+                                <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
