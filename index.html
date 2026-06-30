@@ -229,6 +229,46 @@
             background-clip: text;
         }
 
+        /* Hero — greeting / name / animated roles */
+        .hero-greeting {
+            display: block;
+        }
+
+        .hero-name {
+            display: block;
+            white-space: nowrap;                      /* keeps the full name on one line */
+            font-size: clamp(1.6rem, 7vw, 4.2rem);    /* scales down so it never overflows */
+            line-height: 1.1;
+        }
+
+        .hero-roles {
+            display: block;
+            margin-top: 0.85rem;
+            font-size: clamp(0.95rem, 3vw, 1.55rem);
+            font-weight: 600;
+            color: var(--text-secondary);
+            min-height: 1.5em;                         /* prevents layout jump while typing */
+        }
+
+        #role-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .role-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            margin-left: 3px;
+            background: var(--accent-blue);
+            vertical-align: text-bottom;
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
         .hero-subtitle {
             font-size: clamp(1rem, 2.5vw, 1.25rem);
             color: var(--text-secondary);
@@ -755,6 +795,12 @@
                 transform: translateX(0);
             }
 
+            /* Light theme: keep the open mobile menu readable */
+            body.light-theme .nav-links {
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -1153,8 +1199,11 @@
             <div class="hero-gradient gradient-2" aria-hidden="true"></div>
             <div class="hero-content">
                 <h1 class="hero-title fade-in">
-                    Hi, I'm <span class="gradient-text">Md. Harun-Ur-Rashid</span>
-                    <span style="font-size: 0.6em; font-weight: 600; display: block; margin-top: 0.5rem; color: var(--text-secondary);">Entrepreneurial Engineer | Software Engineer | AI/ML Mentor</span>
+                    <span class="hero-greeting">Hi, I'm</span>
+                    <span class="gradient-text hero-name">Md. Harun-Ur-Rashid</span>
+                    <span class="hero-roles" aria-label="Entrepreneurial Engineer, Software Engineer, AI/ML Mentor">
+                        <span id="role-text"></span><span class="role-cursor" aria-hidden="true"></span>
+                    </span>
                 </h1>
 
                 <p class="hero-subtitle fade-in" style="animation-delay: 0.2s;">
@@ -1478,6 +1527,45 @@
                 el.style.transition = 'none';
             });
         }
+
+        // Animated rotating roles (typewriter effect)
+        (function () {
+            const el = document.getElementById('role-text');
+            if (!el) return;
+
+            const roles = ["Entrepreneurial Engineer", "Software Engineer", "AI/ML Mentor"];
+
+            // Respect users who prefer reduced motion — show roles statically.
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                el.textContent = roles.join(' | ');
+                const cursor = document.querySelector('.role-cursor');
+                if (cursor) cursor.style.display = 'none';
+                return;
+            }
+
+            let roleIndex = 0, charIndex = 0, deleting = false;
+
+            function tick() {
+                const current = roles[roleIndex];
+
+                if (!deleting) {
+                    el.textContent = current.slice(0, ++charIndex);
+                    if (charIndex === current.length) {
+                        deleting = true;
+                        return setTimeout(tick, 1600);   // pause on full word
+                    }
+                } else {
+                    el.textContent = current.slice(0, --charIndex);
+                    if (charIndex === 0) {
+                        deleting = false;
+                        roleIndex = (roleIndex + 1) % roles.length;
+                        return setTimeout(tick, 350);    // pause before next word
+                    }
+                }
+                setTimeout(tick, deleting ? 45 : 85);
+            }
+            tick();
+        })();
 
         // Dark/Light Mode Toggle
         const darkModeToggle = document.querySelector('.dark-mode-toggle');
